@@ -1,0 +1,55 @@
+<!-- Custom metadata, injected at the end of <head> by the Chirpy theme. -->
+
+<meta name="author" content="{{ site.social.name }}">
+
+<!-- rel="me" links let search engines and Mastodon/IndieWeb verify that the
+     profiles below and this domain belong to the same person. -->
+{% for link in site.social.links %}
+  <link rel="me" href="{{ link }}">
+{% endfor %}
+
+{% if page.layout == 'home' or page.url == '/about/' %}
+  <!-- Person entity for the site owner. jekyll-seo-tag only emits a WebSite /
+       BlogPosting node, so this is what connects the domain to the name. -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": {{ '/#davide-di-francesco' | absolute_url | jsonify }},
+      "name": {{ site.social.name | jsonify }},
+      "alternateName": "davdifr",
+      "givenName": "Davide",
+      "familyName": "Di Francesco",
+      "url": {{ '/' | absolute_url | jsonify }},
+      "mainEntityOfPage": {{ '/about/' | absolute_url | jsonify }},
+      "image": {{ site.avatar | absolute_url | jsonify }},
+      "jobTitle": "Frontend Developer",
+      "description": {{ site.description | strip_newlines | strip | jsonify }},
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Gunpowder S.r.l"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "L'Aquila",
+          "addressRegion": "Abruzzo",
+          "addressCountry": "IT"
+        }
+      },
+      "knowsAbout": [
+        "Angular",
+        "TypeScript",
+        "RxJS",
+        "NgRx",
+        "Front-end development",
+        "Web development",
+        "AI-assisted coding",
+        "Blockchain",
+        "Non-fungible tokens"
+      ],
+      "sameAs": {{ site.social.links | jsonify }}
+    }
+  </script>
+{% endif %}

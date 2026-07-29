@@ -2,9 +2,14 @@
 # the default layout is 'page'
 icon: fas fa-info-circle
 order: 4
+description: >-
+  Davide Di Francesco is a frontend developer based in L'Aquila, Italy, building
+  web applications with Angular and TypeScript at Gunpowder S.r.l.
 ---
 
-I'm Davide, a passionate web developer with a strong focus on front-end development using TypeScript and Angular.
+I'm **Davide Di Francesco**, a frontend developer based in L'Aquila, Italy. I build web
+applications with a strong focus on front-end development using TypeScript and Angular,
+and I write about what I learn here.
 
 ---
 
